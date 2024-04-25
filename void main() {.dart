@@ -3,10 +3,10 @@ import 'dart:svg';
 
 void main(one) {
 bool weight>90 = true;
-if(biggerThan90) {
+if(weight>90) {
     print ("fat");
 } bool weight<50= true;
-if (lessThan50) {
+if (weight<50) {
     print ("thin");
 } else {
     print ("normal weight");
