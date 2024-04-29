@@ -1,0 +1,34 @@
+void main() {
+   var marketpdt1 = Market()
+   ..name ='suger'
+   ..price =35;
+   var marketpdt2 = Market() 
+   ..name ='milk'
+   ..price = 59;
+   var marketpdt3 = Market()
+   ..name = 'flour'
+   ..price = 50;
+   var marketpdt4 = Market()
+   ..name ='tea'
+   ..price = 65;
+   var marketpdt5 = Market()
+   ..name ='sponge'
+   ..price = 20;
+   var marketpdt6 = Market()
+   ..name = 'oil'
+   ..price =100;
+   var marketpdt7 = Market()
+   ..name= 'cheese'
+   ..price = 150;
+    var marketpdtlist = [marketpdt1,marketpdt2,marketpdt3,marketpdt4,marketpdt5,marketpdt6,marketpdt7];
+    var total = 0;
+    for (var marketpdt in marketpdtlist) {
+      total=total + marketpdtprice;
+
+    }
+   print ('total price is :$total');
+   
+  
+   }
+
+}
