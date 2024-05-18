@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
 onGenerateInitialRoutes: (settings) [
   switch(settings.name) {
     case'/facebook'=>
-     MaterialPageRoute(builder: (_)=>FacebookPage()),
+     MaterialPageRoute(builder: (_)=> FacebookPage()),
     case'/twitter'=>
     MaterialPageRoute(builder:(_) => TwitterPage()),
     default:
