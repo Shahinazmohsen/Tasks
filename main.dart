@@ -1,0 +1,52 @@
+
+import 'package:flutter/material.dart';
+import 'package:flutter_application_4/pages/facebook.dart';
+import 'package:flutter_application_4/pages/form_page.dart';
+import 'package:flutter_application_4/pages/fries.dart';
+
+import 'package:flutter_application_4/pages/home.dart';
+import 'package:flutter_application_4/pages/marg_pizza.dart';
+
+import 'package:flutter_application_4/pages/twitter.dart';
+import 'package:flutter_application_4/pages/veg_pizza.dart';
+
+
+
+void main(){
+  runApp(MyApp(),);
+
+
+}
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home:HomePage(),
+      routes:{
+        '0':(context)=>VegPizzaPage(),
+        '1':(context)=>MargPizzaPage(),
+        '2':(context) => FriesPage(),
+        '3':(context)=>TwitterPage(),
+        '4':(context) => FacebookPage(),
+        '5':(context)=>FormPage(),
+
+
+      }
+
+);}
+
+ 
+    
+  
+  }
+
+
+
+
+
+
+
+  
