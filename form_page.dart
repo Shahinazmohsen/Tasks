@@ -1,0 +1,95 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
+
+class FormPage extends StatefulWidget {
+  const FormPage({super.key});
+
+  @override
+  State<FormPage> createState() => _FormPageState();
+}
+
+class _FormPageState extends State<FormPage> {
+  var emailController=TextEditingController();
+   var usernameController=TextEditingController();
+    var passwordController=TextEditingController();
+     var confirmPasswordController=TextEditingController();
+ 
+var formkey=GlobalKey<FormState> ();
+
+  @override
+  void dispose() {
+     emailController.dispose();
+     usernameController.dispose();
+     passwordController.dispose();
+     confirmPasswordController.dispose();
+    super.dispose();
+  }
+  
+  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title:const Text('Sign In'),
+
+      ),
+      body:Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Form(
+          key: formkey,
+          child: Column(children: [
+            myTextField(label:'Email',icon:Icons.email,keyboardType:TextInputType.emailAddress,controller:emailController ),
+            myTextField(label:'Username', icon: Icons.person,controller: usernameController) ,
+            myTextField(label: 'Password', icon: Icons.password,obscureText: true,maxLenght: 20,controller: passwordController ),
+            myTextField(label: 'Confirm Password', icon: Icons.password,obscureText: true,maxLenght: 20,controller: confirmPasswordController), 
+          ElevatedButton(onPressed: (){if(formkey.currentState!.validate());}, child: Text('Sign Up'))
+          ],),
+        ),
+        )
+    );
+  }}
+
+Widget myTextField({
+  required String label,
+  required IconData icon,
+  required TextEditingController controller,
+bool obscureText=false,
+int ? maxLenght,
+
+TextInputType? keyboardType= TextInputType.text} ) {
+  return   Row(
+              children: [Text('Email address'),
+              SizedBox( 
+                width: 15,),
+                Expanded
+                 (child: TextFormField(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (value){
+                    if (value==''){
+                      return 'field is required';
+                    } else {
+                      return null;
+                    }
+                  },
+                  controller: controller,
+                  obscureText: obscureText,
+                  maxLength: maxLenght,
+                  maxLines: obscureText?1:null,
+                  textInputAction: TextInputAction.next,
+                  keyboardType: keyboardType,
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(icon),
+                    label: Text(label),
+                    hintText:'Enter your mail',
+                    border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10))) ),
+
+                    
+                  ),
+                ),
+            
+              ],);
+          
+      
+}
